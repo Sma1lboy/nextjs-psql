@@ -1,0 +1,18 @@
+# Dockerfile.studio
+FROM node:20-alpine
+WORKDIR /app
+
+# Copy only necessary files for Prisma Studio
+COPY package*.json ./
+COPY schema.prisma ./
+
+# Install dependencies
+RUN npm install
+
+# Generate Prisma client
+RUN npx prisma generate
+
+EXPOSE 5555
+
+# Run Prisma Studio
+CMD npx prisma generate && npx prisma db push && npx prisma studio 

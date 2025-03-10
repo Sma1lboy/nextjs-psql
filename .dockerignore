@@ -1,0 +1,15 @@
+.git
+.gitignore
+README.md
+.next
+node_modules
+npm-debug.log
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.pem
+.DS_Store
+coverage
+.vscode
